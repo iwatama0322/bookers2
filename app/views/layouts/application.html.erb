@@ -23,6 +23,16 @@
 
    <% if user_signed_in? %>
     <li class="nav-item">
+      <%= link_to user_path(current_user) ,class: 'nav-link text-light' do %>
+      <i class="fas fa-home"></i>
+       Homes
+      <% end %>
+       <li class="nav-item">
+      <%= link_to "/books" ,class: 'nav-link text-light' do %>
+      <i class="fas fa-book-open"></i>
+       Books
+      <% end %>
+    <li class="nav-item">
        <%= link_to destroy_user_session_path, method: :delete,class: 'nav-link text-light' do %>
       <i class="fas fa-sign-out-alt"></i>
       Log out
@@ -60,7 +70,6 @@
    </nav>
   </header>
     <%= yield %>
-
   <footer>
   <div class="container mt-5">
   	<div class="row">
